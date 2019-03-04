@@ -12,7 +12,7 @@ services:
     restart: always
 
   alarminvrest:
-    image: ms-exp-1:0.0.1-SNAPSHOT
+    image: alarm-inv:0.0.1-SNAPSHOT
     container_name: alarminvrest
     links:
       - "alarminvdb:mongo"
