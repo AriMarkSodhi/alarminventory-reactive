@@ -33,18 +33,6 @@ The technology being explored includes:
   - Spring annotations for Mongo persistent collections or alarms, alarm definitions and resources.
   - reactive mongo -  Spring repository using template delegation vs. repository inheritance
   - Mongo docker image
-- Nginx  - front ending the REST APIs acting as an API GW
-  - load balance
-  - rate limit - Ratelimiters using different strategies.
-       - per client Request Rate limit - max num requests per time interval - fixed, sliding
-          - request/sec
-          - request/min
-          - request/hr
-          - request/day
-       - Concurrent Rate limit - max num concurrent requests at same time
-       - Priority Based Rate limit - portion of bw reserved for hi-priority
-       - utilization based rate limit - final type to prevent overload - based on priority - critical, posts, gets, tests
-
 - Docker - importing, building and activating/deactivating images via docker and docker-compose. This is ok
   for experimentation on a single host, but a container orchestration engine like kubernetes is needed for
   dynamically scaling  production deployments.
