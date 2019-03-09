@@ -29,29 +29,17 @@ The technology being explored includes:
 - Mongodb
   - Spring annotations for Mongo persistent collections or alarms, alarm definitions and resources.
   - reactive mongo -  Spring repository using template delegation vs. repository inheritance
-  - Mongo docker image
-- Nginx  - front ending the REST APIs acting as an API GW
-  - load balance
-  - rate limit - Ratelimiters using different strategies.
-       - per client Request Rate limit - max num requests per time interval - fixed, sliding
-          - request/sec
-          - request/min
-          - request/hr
-          - request/day
-       - Concurrent Rate limit - max num concurrent requests at same time
-       - Priority Based Rate limit - portion of bw reserved for hi-priority
-       - utilization based rate limit - final type to prevent overload - based on priority - critical, posts, gets, tests
+  - Mongo docker image pre-installed
 
 - Docker - importing, building and activating/deactivating images via docker and docker-compose. This is ok
   for experimentation on a single host, but a container orchestration engine like kubernetes is needed for
-  dynamically scaling  production deployments.
+  dynamically scaling  production deployments. Docker is assumed to be already installed. 
 - Swagger/OpenAPI - embed documentation
 - Traceability, Profiling using AOP
 
-The application has three docker images:
-- the alarm REST API
-- Nginx
-- Mongodb
+The application has two docker images:
+- the alarm REST API docker image built by this project
+- Mongodb - assumed to be pre-installed
 and a test client. Right now the application bootstraps the database. Only the alarm definitions
 and the alarm instances are modeled. The resources will be a separate REST controller and
 docker image.
